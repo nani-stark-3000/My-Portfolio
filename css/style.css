@@ -95,7 +95,7 @@ common
 @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* ----- text defaults ----- */
 body {
-  color: #8c8c8e;
+  color: #ffffffe0;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -1614,7 +1614,7 @@ content
   position: relative;
 }
 .art-counter-frame .art-counter-box {
-  min-width: 60px;
+  min-width: 20px;
 }
 .art-counter-frame .art-counter-box .art-counter {
   color: #FFC107;
@@ -1634,8 +1634,7 @@ content
 .art-service-icon-box {
   margin-bottom: 30px;
   position: relative;
-  z-index: 1;
-  overflow: hidden;
+  z-index: 0;
   -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
           box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
@@ -1655,6 +1654,19 @@ content
   -ms-flex-item-align: center;
       align-self: center;
 }
+.art-project-image {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  right: 30px;
+  top: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+          box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+}
+
 
 /* ----- prices ----- */
 .art-price {
@@ -2820,3 +2832,103 @@ html.is-animating .fade-left {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.svg-image-container {
+  position: relative;
+  margin: 5px;
+}
+
+.svg-image {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.svg-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  color: #fff;
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 5;
+}
+
+.svg-image-container:hover .svg-image {
+  transform: scale(1.1);
+}
+
+.svg-image-container:hover .svg-image-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.svg-image + .svg-image-text {
+  top: 120%;
+}
+
+@media (max-width: 768px) {
+  .svg-image {
+    width: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .svg-image {
+    width: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .svg-image {
+    width: 80px;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #1c1a27d1;
+}
+
+.modal-content {
+  background-color: #232026;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px;
+  width: 40%;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* Center modal on small screens */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    margin: 30% auto;
+    width: 80%;
+  }
+}
