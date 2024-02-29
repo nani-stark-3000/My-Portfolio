@@ -137,7 +137,7 @@ $(function() {
     }
   });
 
-  bar.animate(0.9);
+  bar.animate(0.7);
 
   var bar = new ProgressBar.Circle(circleprog3, {
     strokeWidth: 7,
@@ -155,7 +155,7 @@ $(function() {
     }
   });
 
-  bar.animate(0.7);
+  bar.animate(0.5);
 
   var bar = new ProgressBar.Line(lineprog1, {
     strokeWidth: 1.72,
@@ -172,7 +172,7 @@ $(function() {
     }
   });
 
-  bar.animate(.9);
+  bar.animate(.6);
 
   var bar = new ProgressBar.Line(lineprog2, {
     strokeWidth: 1.72,
@@ -206,7 +206,7 @@ $(function() {
     }
   });
 
-  bar.animate(.75);
+  bar.animate(.8);
 
   var bar = new ProgressBar.Line(lineprog4, {
     strokeWidth: 1.72,
@@ -223,7 +223,7 @@ $(function() {
     }
   });
 
-  bar.animate(.65);
+  bar.animate(.8);
 
   var bar = new ProgressBar.Line(lineprog6, {
     strokeWidth: 1.72,
@@ -240,7 +240,7 @@ $(function() {
     }
   });
 
-  bar.animate(1);
+  bar.animate(.8);
 
   var bar = new ProgressBar.Line(lineprog7, {
     strokeWidth: 1.72,
@@ -257,7 +257,7 @@ $(function() {
     }
   });
 
-  bar.animate(1);
+  bar.animate(.7);
 
   var bar = new ProgressBar.Line(lineprog8, {
     strokeWidth: 1.72,
@@ -274,7 +274,7 @@ $(function() {
     }
   });
 
-  bar.animate(.20);
+  bar.animate(.5);
 
   var bar = new ProgressBar.Line(lineprog9, {
     strokeWidth: 1.72,
@@ -291,7 +291,7 @@ $(function() {
     }
   });
 
-  bar.animate(.80);
+  bar.animate(.4);
 
   // Contact form
   $('.art-input').keyup(function() {
@@ -305,7 +305,8 @@ $(function() {
   $("#form").submit(function() {
     $.ajax({
       type: "POST",
-      url: "mail.php",
+      // url: "https://9kwniqymcc.execute-api.ap-south-1.amazonaws.com/Maile/contact",
+      url: window.location.href + "mail.php",
       data: $(this).serialize()
     }).done(function() {
 
@@ -342,7 +343,7 @@ $(function() {
 
   // masonry Grid
   $('.art-grid').isotope({
-    filter: '*',
+    filter: '.Certificates',
     itemSelector: '.art-grid-item',
     transitionDuration: '.6s',
   });
@@ -534,7 +535,8 @@ $(function() {
     $("#form").submit(function() {
       $.ajax({
         type: "POST",
-        url: "mail.php",
+        // url: "https://9kwniqymcc.execute-api.ap-south-1.amazonaws.com/Maile/contact",
+        url: window.location.href + "mail.php",
         data: $(this).serialize()
       }).done(function() {
 
