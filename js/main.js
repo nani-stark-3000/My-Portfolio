@@ -561,7 +561,7 @@ $(function() {
 
     // Masonry Grid
     $('.art-grid').isotope({
-      filter: '*',
+      filter: '.Certificates',
       itemSelector: '.art-grid-item',
       transitionDuration: '.6s',
     });
